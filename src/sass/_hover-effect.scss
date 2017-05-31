@@ -1,0 +1,245 @@
+/* the important bits */
+
+.board-img {
+	margin: 0;
+	padding: 0;
+
+
+	li {
+		position: relative;
+		float: left;
+		perspective: 400px;
+		height: 175px;
+		padding: 0;
+		list-style: none;
+
+		.title {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			font-size: 1.45em;
+			line-height: 1.2;
+			font-family: $kievit;
+			transition: color .3s ease;
+		}
+
+
+		&:hover .title {
+			color: #000000;
+		}
+
+		.normal {
+			position: relative;
+			display: inline-block;
+
+			width: 100%;
+			height: 100%;
+
+			padding: 20px;
+
+			background-position: top left;
+			background-repeat: no-repeat;
+
+			color: #ffffff;
+
+			border: solid 1px rgba(234, 237, 244, .3);
+			border-left: transparent;
+			border-bottom: transparent;
+
+			z-index: 2;
+
+			.direction-icon,
+			.direction-icon_hov {
+				display: inline-block;
+				width: 55px;
+				height: 55px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+
+				transition: all .3s ease;
+			}
+
+			&:hover .direction-icon {
+				opacity: 0;
+			}
+			.direction-icon_hov {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				opacity: 0;
+			}
+
+			&:hover .direction-icon_hov {
+				opacity: 1;
+			}
+		}
+	}
+//Hover effect
+	.hov {
+		transform: rotate3d(1, 0, 0, 90deg);
+		width: 100%;
+		height: 100%;
+		padding: 20px;
+		position: absolute;
+		top: 0;
+		transition: opacity .3s ease;
+		left: 0;
+		pointer-events: none;
+
+		background-color: #ffffff;
+		background-position: top left;
+		background-repeat: no-repeat;
+
+		color: #000000;
+	}
+
+	.in-top .hov {
+		opacity: 1;
+
+		transform-origin: 50% 0%;
+		animation: in-top $duration $timing-fn 0ms 1 forwards;
+	}
+	.in-right .hov {
+		opacity: 1;
+
+		transform-origin: 100% 0%;
+		animation: in-right $duration $timing-fn 0ms 1 forwards;
+	}
+	.in-bottom .hov {
+		opacity: 1;
+
+		transform-origin: 50% 100%;
+		animation: in-bottom $duration $timing-fn 0ms 1 forwards;
+	}
+	.in-left .hov {
+		opacity: 1;
+
+		transform-origin: 0% 0%;
+		animation: in-left $duration $timing-fn 0ms 1 forwards;
+	}
+
+	.out-top .hov {
+		opacity: 0;
+
+		transform-origin: 50% 0%;
+		animation: out-top $duration $timing-fn 0ms 1 forwards;
+	}
+	.out-right .hov {
+		opacity: 0;
+
+		transform-origin: 100% 50%;
+		animation: out-right $duration $timing-fn 0ms 1 forwards;
+	}
+	.out-bottom .hov {
+		opacity: 0;
+
+		transform-origin: 50% 100%;
+		animation: out-bottom $duration $timing-fn 0ms 1 forwards;
+	}
+	.out-left .hov {
+		opacity: 0;
+
+		transform-origin: 0% 0%;
+		animation: out-left $duration $timing-fn 0ms 1 forwards;
+	}
+
+	@keyframes in-top {
+		from {
+			transform: rotate3d(-1, 0, 0, 90deg)
+		}
+		to {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+	}
+	@keyframes in-right {
+		from {
+			transform: rotate3d(0, -1, 0, 90deg)
+		}
+		to {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+	}
+	@keyframes in-bottom {
+		from {
+			transform: rotate3d(1, 0, 0, 90deg)
+		}
+		to {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+	}
+	@keyframes in-left {
+		from {
+			transform: rotate3d(0, 1, 0, 90deg)
+		}
+		to {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+	}
+
+	@keyframes out-top {
+		from {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+		to {
+			transform: rotate3d(-1, 0, 0, 104deg)
+		}
+	}
+	@keyframes out-right {
+		from {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+		to {
+			transform: rotate3d(0, -1, 0, 104deg)
+		}
+	}
+	@keyframes out-bottom {
+		from {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+		to {
+			transform: rotate3d(1, 0, 0, 104deg)
+		}
+	}
+	@keyframes out-left {
+		from {
+			transform: rotate3d(0, 0, 0, 0deg)
+		}
+		to {
+			transform: rotate3d(0, 1, 0, 104deg)
+		}
+	}
+}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.col-xs-15 {
+	width: 20%;
+	float: left;
+}
+@media (min-width: 768px) {
+	.col-sm-15 {
+		width: 20%;
+		float: left;
+	}
+}
+@media (min-width: 992px) {
+	.col-md-15 {
+		width: 20%;
+		float: left;
+	}
+}
+@media (min-width: 1280px) {
+	.col-lg-15 {
+		width: 20%;
+		float: left;
+	}
+}
