@@ -1,0 +1,87 @@
+/***** Contacts  *****/
+
+.contacts{
+
+	/*** Contact info ***/
+	.contacts-info{
+		margin-bottom: 30px;
+		padding: 65px 3.5% 40px 8%;
+		> .title{
+			margin: 0 0 40px 0;
+			font-family: $kievit ;
+			font-size: 2.67em;
+		}
+		li{
+			padding-right: 7%;
+			font-size: .9em;
+			line-height: 1.8;
+			address{
+				line-height: 1.8;
+			}
+			.bold{
+				display: block;
+			}
+			.phone{
+				margin-bottom: 20px;
+				a{
+					display: block;
+				}
+			}
+			.mail{
+				a{
+					color: $accent-col;
+				}
+			}
+		}
+	}
+
+	/*** Map ***/
+	.map-wrapp{
+		.title{
+			margin: 0 0 25px 0;
+			padding: 0 8%;
+			font-size: 1.45em;
+			font-family: $kievit;
+		}
+	}
+	.map{
+		position: relative;
+		height: 400px;
+		.zoom-control{
+			width: 70px;
+			background: #ffffff;
+			padding: 0 10px;
+			.plus,
+			.minus{
+				width: 100%;
+				height: 70px;
+				background-repeat: no-repeat;
+				background-position: center;
+				cursor: pointer;
+				transition: all .35s ;
+			}
+			.plus{
+				border-bottom: solid 1px #e9edf4;
+				background-image: url("../img/plus-b.jpg");
+				&:hover{
+					background-image: url("../img/plus-g.jpg");
+				}
+			}
+			.minus{
+				background-image: url("../img/minus-b.jpg");
+				&:hover{
+					background-image: url("../img/minus-g.jpg");
+				}
+			}
+		}
+	}
+
+	/*** Contact form ***/
+	.pop-up{
+		position: static;
+		display: block;
+		.h2{
+			margin-top: 20px;
+		}
+	}
+}

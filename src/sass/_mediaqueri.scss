@@ -2,19 +2,19 @@
 /**** Main Page ****/
 
 
-/**********************/
+
+
+/***************************/
 /**** Min width: 1920px ****/
-/**********************/
-@media screen and (min-width: 1900px) {
+/**************************/
 
-/** !Pop up **/
-    .pop-up{
-        padding: 45px 1% 0 4%;
-    }
+
+
+
+@media screen and (min-width: 1920px) {
+
+/** Pop up **/
     .pop-up form {
-
-
-
         label{
             left: 7.5%;
         }
@@ -29,7 +29,8 @@
             }
         }
 
-/** !Timepicker **/
+
+/** Timepicker **/
         .timepicker + .contact-item {
             padding: 15px 1.7% 15px .5%;
         }
@@ -48,27 +49,81 @@
         }
     }
 
-	/** !Datepicker **/
+
+	/** Datepicker **/
 	.datepicker{
 		width: 85.3%;
 	}
+	.sidebar .navbar .sidebar-nav .active > .link {
+		display: block;
+	}
+
+
+/***** About page start *****/
+
+
+	.mission{
+		padding-bottom: 60px;
+
+	}
+
+	.clinic {
+		.h2{
+			margin: 0 0 30px 0;
+		}
+		.link-obor {
+			margin-top: 30px;
+		}
+
+	}
+
+
+	/***** About page end *****/
+
+
+	/***** Doctors page  *****/
+
+
+	/*** Doctors list ***/
+	.doctors-list-item {
+		margin-bottom: 80px;
+	}
 }
+
+
 
 
 /**********************/
 /**** max width: 1919px  min-width 1280 ****/
 /**********************/
+
+
+
+
 @media screen and (max-width: 1919px) and (min-width: 1280px) {
 
 }
 
 
+
+
+
+
 /**********************/
 /****  max-width 1279 ****/
 /**********************/
+
+
+
+
 @media only screen and  (max-width: 1279px) {
 
-/** !Mobile menu **/
+
+	/***** Main page start *****/
+
+
+	/** Mobile menu **/
+
 
     //for body
      .fixed{
@@ -76,7 +131,7 @@
      }
     .blackout{
         position: fixed;
-        left: 309px;
+        left: 0;
         right: 99999px;
         bottom: 0;
         top: 0;
@@ -93,14 +148,14 @@
         opacity: 1;
     }
 
-
     .bg-sidebar{
         display: none;
     }
 
-        .main-content{
-            padding: 0;
-        }
+	.main-content{
+		padding: 0;
+	}
+
 //Sidebar
         .sidebar {
 			position: fixed;
@@ -108,13 +163,12 @@
 			left: -310px;
 			top: 94px;
 			font-size: 1.35em;
-			transition: all .4s ease;
+			transition: all .5s cubic-bezier(.71, 0, .50, .74);
 			&.open {
 				left: 0;
 			}
 			.wrapp-mob {
-				padding-bottom: 70px;
-				height: 100vh;
+				height: 100%;
 				overflow-y: scroll;
 			}
 			.logo {
@@ -126,17 +180,15 @@
 			}
 
 			//Nav bar
-
 			.navbar {
 				margin-bottom: 0;
 
-				.sidebar-nav a{
+				.sidebar-nav .link{
 					font-size: .67em;
 				}
 			}
 
 			//Search form
-
 			.search-form {
 				position: relative;
 				margin: 0 45px 50px 55px;
@@ -163,19 +215,17 @@
 					border-color: $accent-col;
 					box-shadow: none;
 					padding: 9px 40px 9px 20px ;
-
 				}
 				.form-control + .search-icon{
 					left: 165px;
 				}
 			}
-
         }
         .main-content{
             .logo{
                 position: absolute;
                 width: 310px;
-                height: 95px;
+                height: 96px;
                 display: block;
                 padding: 20px 43px 20px 67px;
                 top: -1px;
@@ -190,8 +240,6 @@
     header {
 
         /****** Header top ******/
-
-
         .header-top {
             padding: 20px 0 0 310px;
             height: 95px;
@@ -202,12 +250,10 @@
             .address p {
                 display: none;
             }
-
             .address {
                 padding: 0;
                 text-align: center;
-				margin-left: 30px;
-
+				margin-left: 24px;
                 .wrap {
                     display: inline-block;
                 }
@@ -219,7 +265,7 @@
                 }
             }
 			.btn-feedback{
-				margin-right: 30px;
+				margin-right: 40px;
 				float: right;
 				padding: 0;
 			}
@@ -232,8 +278,7 @@
                 display: none;
             }
             .header-middle {
-                padding: 55px 8% 135px 7%;
-
+                padding: 55px 8% 135px 8%;
                 .mob-bg{
                     position: absolute;
                     top: 0;
@@ -252,22 +297,31 @@
         }
 
 
-        /****** !Board  ******/
+        /****** Board  ******/
 
 
         .board-img{
             background:  #ffffff;
             li {
+				display: table;
                 height: 100px;
+				border: solid 1px rgba(234, 237, 244, 1);
+				border-bottom: transparent;
+				&:nth-child(odd) {
+					border-left: transparent;
+					border-right: transparent;
+				}
+				&:nth-child(even) {
+					border-right: transparent;
+				}
 
                 .normal{
-                    padding: 22px;
-                    border: solid 1px rgba(234, 237, 244, 1);
-                    border-left: transparent;
-                    border-bottom: transparent;
-                    color: #000000;
-
-                    .direction-icon{
+					display: table-cell;
+					vertical-align: middle;
+                    padding: 0 12px;
+					color: #1a1b1b;
+					border: none;
+					.direction-icon{
                         display: none;
                     }
                     .direction-icon_hov{
@@ -275,7 +329,7 @@
                         position: static;
                         margin: 0 14px;
                         opacity: 1;
-                        vertical-align: middle;
+						vertical-align: middle;
                     }
                     .title{
                         display: inline-block;
@@ -288,69 +342,66 @@
         }
     }
 
+
     /****** Header bottom ******/
+
 
     .main-content{
         header{
             .header-bottom {
                 .link-box{
                     .link-info {
-                        padding-right: 10%;
-                        padding-left: 30px;
-                        bottom: 28px;
+                        padding: 0 25px;
+                        bottom: 23px;
                     }
-
 
                     .link-info p{
                         opacity: 1;
                     }
-
                     .bottom-img{
                         transform: scale(1);
                     }
                 }
-
                 .link-box:nth-child(1){
                     width: 50%;
 
                 }.link-box:nth-child(2){
                      width: 50%;
                  }
-
             }
         }
     }
 
 
+    /**** News sharesshort****/
 
-
-    /**********************/
-    /**** !News sharesshort****/
-    /**********************/
 
     .news-shares-short {
-        padding: 80px 0 0 0;
+        padding: 70px 0 0 0;
 
         .news-title {
-            margin-left: 4%;
+            margin-left: 5%;
 
             &:before{
                 width: 2%;
             }
         }
         .news-item{
-            padding: 25px 6.5%;
+            padding: 25px 8%;
         }
         .news-link{
-            margin-left: 6.5%;
+			margin: 7px 0 70px 7.5%;
+			a:hover:after {
+				visibility: hidden;
+				transform: scaleX(0);
+			}
         }
         .shares-short{
             padding: 0;
             display: block;
-
             .pattern{
-                padding: 20px 6.5%;
-                text-align: center;
+				padding: 22px 4% 22px 8%;
+				text-align: center;
                 p{
                     display: inline-block;
                     text-align: start;
@@ -358,10 +409,10 @@
                 }
 
                 .serv{
-                    padding: 0 5% 0 8.5%;
+                    padding: 0 6% 0 7%;
                 }
                 .limit{
-                    padding-left: 6%;
+                    padding-left: 2%;
                 }
             }
         }
@@ -371,43 +422,42 @@
         .text{
             padding-right: 5%;
         }
-
         .pag-arrow{
             padding-right: 2%;
 
             .arrow{
-                margin-top: 35px;
+                margin-top: 40px;
             }
-
-
-
 		}
     }
 
-	/**********************/
-	/**** Info list ****/
-	/**********************/
-	.info-list{
-		padding-right: 0;
 
+	/**** Info list ****/
+
+
+	.info-list{
+		padding: 0 18px;
 		.info-bloc{
-			padding-left: 2.5%;
-			padding-right: 2.5%;
+			padding-left: 1.5%;
+			padding-right: 17px;
 		}
 	}
-    /**********************/
+
+
     /**** Footer ****/
-    /**********************/
+	.link-fresh .logo-fresh{
+		margin-right: 10px;
+	}
 
     footer .wrapp-footer {
-        padding: 35px 0 40px 0;
+        padding: 32px 0 40px 0;
 
         .right{
-            padding: 4% 0 0 4%;
+            padding: 5.5% 0 0 5%;
         }
 
         .left{
-            padding-left: 2.5%;
+            padding-right:0;
         }
     }
 
@@ -417,20 +467,25 @@
             margin: 0 0 15px 0;
         }
     }
+	.social .h1{
+		font-size: 1em;
+	}
 
 	/**** Pop up ****/
+
 
 	.pop-up{
 		&.open{
 			left: 0;
 		}
-
 		 form input,
 		 form textarea{
-			 padding: 15px 20px;
+			 padding: 12px 15px;
 			 font-size: 1em;
 		 }
-
+		form .contact-item {
+			padding: 10px 2.7% 15px 2.7%;
+		}
 		.closed{
 			padding-right: 0;
 			text-align: right;
@@ -439,14 +494,18 @@
 		.h2{
 			margin-top: 90px;
 		}
+
 	}
 
 
 
 
-		/**********************/
-/**** !Gamberger****/
 /**********************/
+/**** Gamberger ****/
+/**********************/
+
+
+
     .navTrigger {
 		cursor: pointer;
 		width: 21px;
@@ -616,29 +675,288 @@
             transform: translateY(-9px) rotate(135deg);
         }
     }
+
+
+
+	/***** Main page end *****/
+
+
+	/***** About page start *****/
+
+
+	/*** Clinic ***/
+	.clinic {
+		padding: 65px 11% 52px 8%;
+		.link-obor{
+			margin: 30px 0 20px 0;
+		}
+		.h2{
+			margin-bottom: 35px;
+			line-height: 1.28;
+		}
+	}
+
+
+	/*** Mission ***/
+	.mission .mission-text p {
+		line-height: 1.88em;
+	}
+	.mission {
+		figure {
+			padding-right: 1.2%;
+		}
+	}
+	.about .clinic-slider .slider-img{
+		padding-top: 75.6%;
+	}
+
+/*** Slider clinic ***/
+	.about .slider-wrapp .pag-arrow {
+		right: -15px;
+		.pagingInfo {
+			padding-left: .5%;
+		}
+	}
+	.license-slider{
+		padding: 155px 0 65px 20px;
+		.pag-arrow .arrow {
+			margin-top: 50px;
+		}
+	}
+
+
+	/***** About page end *****/
+
+
+	/***** Doctors page start *****/
+
+
+	.doctors{
+		padding: 42px 4% 0 4%;
+	}
+	.doctors-list-item {
+		.photo-link .photo {
+			padding-top: 116.5%;
+			width: 78%;
+		}
+		.description {
+			padding-left: 1.2%;
+		}
+	}
+
+
+
+	/**** Doctors profile start ****/
+
+
+	.profile {
+		.title-top {
+			padding-left: 8%;
+		}
+		.data {
+			.photo-wrapp {
+				padding-right: 35px;
+			}
+			.education {
+				padding: 35px 8% 0 2.5%;
+			}
+			.photo{
+				padding-top: 146%;
+			}
+		}
+	}
+
+	.conference{
+		padding: 45px 10% 70px 8%;
+	}
+
+	.personal-license .pag-arrow {
+		.pagingInfo {
+			padding-left: 2%;
+		}
+		.arrow{
+			text-align: end;
+			padding-right: 17px;
+		}
+	}
+
+
+	.personal-license .pag-arrow .arrow .wrapp-arr .arr-l,
+	.personal-license .pag-arrow .arrow .wrapp-arr .arr-r {
+		opacity: 1;
+	}
+	.personal-license .slider-text {
+		width: 28.5%;
+		.slider_text-wrapp {
+			padding-bottom: 35px;
+		}
+	}
+
+
+
+
+	/**** Doctors profile end ****/
+
+
+	/***** Doctors page end *****/
+
+
+
+	/**** News start ****/
+
+	.news-shares .news-shares-list {
+		margin-bottom: 0;
+	}
+
+	/*** News item ***/
+
+	.news-item .photo {
+		margin-bottom: 40px;
+	}
+
+	/**** News end ****/
+
+
+	/**** uslugi start ****/
+
+	.uslugi{
+		padding: 60px 0;
+		.header-content{
+			padding: 0 8%;
+		}
+		.board-img{
+			li{
+				margin: 0 0  -1px 0;
+				&:nth-child(odd) {
+					.normal{
+						border-left: transparent;
+						border-right: transparent;
+					}
+				}
+				&:nth-child(even) {
+					.normal{
+						border-right: transparent;
+					}
+				}
+				.normal{
+					padding-left: 10px;
+					.direction-icon,
+					.direction-icon_hov{
+						left: 10px;
+					}
+					&:hover{
+						background-color: #ffffff;
+						border-color:  rgba(234, 237, 244, 1);
+						.title{
+							color: #1a1b1b;
+						}
+						.direction-icon{
+							opacity: 0;
+						}
+						.direction-icon_hov{
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/*** Usluga ***/
+	.usluga {
+		padding: 65px 8% 25px 8%;
+	}
+
+
+	/*** Sub usluga ***/
+	.directions .doctors-slider .doctors-list-item {
+		.photo-link .photo {
+			padding-top: 125%;
+			width: 85%;
+		}
+		.description {
+			margin-top: 90px;
+			padding-left: 2.5%;
+			padding-right: 0;
+		}
+	}
+
+	/**** uslugi end ****/
+
+	/**** Contacts start ****/
+
+	.contacts .contacts-info {
+		padding: 65px 2% 40px 8%;
+		li {
+			float: left;
+			padding-right: 0;
+
+			width: 30%;
+			+ li{
+				padding-left: 4%;
+			}
+		}
+	}
+
+	/**** Contacts end ****/
+
+	/***** Otveti na voprosi start *****/
+
+	.answers-questions {
+		.blog {
+			padding: 65px 8% 10px 8%;
+		}
+		.questions-item .question {
+			width: 92%;
+			font-size: .787em;
+		}
+		.answers-list{
+			margin-left: 4%;
+			padding: 30px 5%;
+		}
+
+		.question-form {
+			padding-right: 8%;
+		}
+	}
+
+	/***** Otveti na voprosi end *****/
+
 }
+
+
 
 
 /**********************/
 /**** Max width: 767px ****/
 /**********************/
+
+
+
+
 @media screen and (max-width: 767px) {
 
 	/**** Sidebar ****/
-
+	.sidebar .navbar .sidebar-nav {
+		padding: 45px 30px 0 55px;
+		.active .sub-menu{
+			font-size: 1em;
+		}
+	}
 	.sidebar.open{
 		width: 100%;
 
 		.search-form .form-control{
 			width: 100%;
 
-			.form-control + .search-icon {
+			&:focus + .search-icon,
+			&:hover + .search-icon,
+			& + .search-icon {
 				left: auto;
 				right: 0;
 			}
 		}
-
-		.sidebar .search-form .form-control + .search-icon {
+		.search-form .search-icon{
 			left: auto;
 			right: 0;
 		}
@@ -647,6 +965,8 @@
 	.navTrigger{
 		left: 22px;
 	}
+
+
 	/**** Header ****/
 
 	.main-content .logo{
@@ -657,35 +977,39 @@
 		}
 	}
 
-
 	header {
+		.reserv-icon {
+			position: absolute;
+			top: -1px;
+			left: -1px;
+		}
 //Header top
 		.header-top {
 			margin-top: 90px;
-			padding: 25px 25px 0 25px ;
+			padding: 23px 15px 0 15px ;
 
 			.hide-txt{
 				display: none;
 			}
-
 			.btn-feedback .btn{
-				width: 50px;
-				height: 50px;
+				width: 55px;
+				height: 55px;
 				padding: 0;
 			}
-
 			.address,
 			.phone-mail,
 			.btn-feedback{
-				width: 33%;
+				width: 33.3333%;
 				margin: 0;
 				padding: 0;
 				text-align: center;
 			}
-
 			 .map-icon,
 			 .phone-icon{
 				float: none;
+			}
+			 .icon{
+				margin: 0;
 			}
 		}
 
@@ -694,10 +1018,11 @@
 
 			.header-middle {
 				height: 430px;
-					padding: 40px 8% 30px 3%;
+					padding: 40px 25px 30px 25px;
 
 				.quote{
-					margin-top: 35px;
+					margin-top: 30px;
+					line-height: 1.78;
 				}
 				.intro{
 					font-size: 2.67em;
@@ -705,10 +1030,6 @@
 			}
 		}
 
-//Border img
-		.board-img li .normal {
-			padding: 20px 10px;
-		}
 
 	}
 
@@ -727,24 +1048,30 @@
 		}
 	}
 
+
 	/**** News and shares short ****/
+
 
 	.news-shares-short{
 		padding: 70px 15px 0 15px;
-
 		.news-title {
 			margin-left: 3%;
-
 			&:before{
-				width: 3%;
+				width: 25px;
 				margin-right: 5px
 			}
 		}
 		.news-item {
 			padding: 25px 3%;
+			h3{
+				line-height: 1.4;
+			}
 		}
 		.news-link{
-			margin-left: 3%;
+			margin: 7px 25px 70px 25px;
+			&:before{
+				margin-left: -15px;
+			}
 		}
 		.shares-short{
 			display: none;
@@ -756,16 +1083,13 @@
 
 
 	.slider-wrapp {
-
 		.img{
 			width: 100%;
 		}
-
 		.slider-img{
 			padding-top: 63%;
 			height: auto;
 		}
-
 		.text{
 			height: auto;
 			min-height: 1px;
@@ -776,12 +1100,14 @@
 			padding-top: 63%;
 			padding-right: 23px;
 
+			.pagingInfo{
+				padding-left: 8%;
+				padding-top: 52px;
+			}
 			.arrow .wrapp-arr span{
 				opacity: 1;
 			}
-
 			.arrow .wrapp-arr{
-
 				.arr-r {
 					background-image: url('../img/svg/scroll_r_g.svg');
 				}
@@ -789,41 +1115,36 @@
 					background-image: url('../img/svg/scroll_l_g.svg');
 				}
 			}
-
 			.arrow{
-				margin-left: -10px;
+				margin-left: 0;
 				text-align: end;
 			}
 			.prev-arrow{
 				margin-right: 6px;
 			}
+
 		}
 	}
+
 
 	/**** Info list ****/
 
 
 	.info-list{
-		padding-top: 40px;
-		padding-bottom: 65px;
-
+		padding: 40px 0 80px 0;
 		.info-bloc{
 			padding: 0 23px ;
-
 			.title{
-				padding: 30px 0 20px 0 ;
+				padding: 43px 0 20px 0;
 				line-height: .4;
-
 				background-image: url("../img/down_ico_b.png");
-				background-position: right;
+				background-position: right 43px;
 				background-repeat: no-repeat;
-				background-size: 1.5%;
+				background-size: 10px;
 			}
-
 			.show{
 				background-image: url("../img/up_ico_g.png");
 			}
-
 			ul{
 				display: none;
 				padding: 0;
@@ -834,20 +1155,27 @@
 		}
 	}
 
+
 /**** Footer  ****/
+
+
 	footer{
+
 		.wrapp-footer {
-			padding: 28px 0 30px 0;
-			font-size: .76em;
+			padding: 35px 17px 30px 17px;
+			font-size: .78em;
+			line-height: 1.8;
+			.left{
+			}
 			.right{
-				padding: 3% 0 0 2%;
+				padding: 25px 0 0 0;
 			}
 		}
-
-		.social .h1{
-			font-size: 1em;
+		.link-fresh {
+			margin-left: 0;
 		}
 	}
+
 
 /**** Pop up ****/
 	.pop-up {
@@ -856,25 +1184,20 @@
 		.closed {
 			margin: -21px 14%;
 		}
-
-
 		.h2{
 			margin: 80px 0 21px 0;
-			font-size: 2.6em;
+			font-size: 2em;
+			text-align: center;
 		}
-
 		form{
-
 			 input,
 			 textarea {
 				padding: 17px 20px;
 				font-size: .8em;
 			}
-
 			label {
 				left: 3%;
 			}
-
 			.timepicker .time-list {
 				padding: 7px 0;
 				display: none;
@@ -883,14 +1206,439 @@
 				right: 2%;
 			}
 		}
+		.response .response-text-wrapp .response-text{
+			width: 270px;
+			padding: 20px 25px;
+		}
 	}
+
 	.datepicker {
 		width: 94.5%;
-		background-size: 3%;
-
+		background-size: 6%;
 		label{
 			left: 6%;
 		}
 	}
+
+
+
+/***** About page *****/
+
+/*** Description ***/
+
+
+	.clinic{
+		padding: 50px 25px;
+		.h2 {
+			margin-bottom: 15px;
+			font-size: 2em;
+			line-height: 1.34;
+		}
+	}
+
+	/*** Mission ***/
+	.mission {
+		padding-bottom: 0;
+		figure{
+			padding-right: 0;
+			figcaption {
+				padding: 22px 7%;
+			}
+		}
+		.mission-text{
+			padding: 25px  7% 50px 7%;;
+			.h3{
+				margin-bottom: 16px;
+				font-size: 1.45em;
+			}
+		}
+
+	}
+
+
+/*** Clinic slider ***/
+	.about {
+		.slider-wrapp{
+			.pag-arrow{
+				right: -22px;
+				padding-top:75%;
+			}
+		}
+		.clinic-slider {
+			.slider-img-wrapp {
+				width: 100%;
+			}
+			.slider_about-text {
+				position: static;
+				width: 100%;
+			}
+			.slider_text-wrapp{
+				padding: 100px 25px 40px 25px;
+			}
+		}
+	}
+
+
+/*** Facts ***/
+	.facts{
+		.h2{
+			padding: 0 7%;
+			line-height: 1.25;
+		}
+		.facts-list {
+			padding: 0 7%;
+			> li{
+				width: 100%;
+				&:nth-child(even),
+				&:nth-child(odd){
+					padding: 0;
+				}
+			}
+		}
+	}
+
+
+/*** License slider  ***/
+	.license-slider{
+		padding:0;
+		padding-bottom: 65px;
+		.title{
+			padding: 55px 7% 0 7%;
+			position: static;
+			.h3{
+				line-height: 1.25;
+			}
+		}
+		&.slider-wrapp .pag-arrow{
+			height: 55px;
+			position: static;
+			padding: 0;
+			.arrow{
+				margin: 0;
+				padding-right: 8%;
+			}
+		}
+		.slide-item .description{
+			padding: 0 35px;
+		}
+	}
+
+
+
+	/***** Doctors page start *****/
+
+
+
+	.doctors {
+		padding: 27px 25px 0 25px;
+	}
+	.specialty{
+		.title{
+			font-size: 2em;
+		}
+		.specialty-tag .sub-title {
+			margin: 16px 0 12px 0;
+		}
+	}
+	/*** Doctors list ***/
+	.doctors-list-item {
+		.photo-link .photo {
+			padding-top: 150%;
+			width: 100%;
+		}
+		.description{
+			padding: 0;
+			.name{
+				margin-top: 25px;
+				line-height: 1.35;
+			}
+		}
+	}
+
+
+	/**** Doctors profile start ****/
+
+
+	.profile {
+		.title-top {
+			padding: 45px 25px 20px 25px;
+			.name {
+				font-size: 2em;
+				line-height: 1.34;
+			}
+		}
+		.data .photo-wrapp {
+			padding-right: 0;
+		}
+		.title {
+			font-size: 1.45em;
+			line-height: 1.4;
+		}
+
+		.data .education {
+			padding: 35px 25px 0 25px;
+		}
+	 }
+	.conference {
+		padding: 50px 25px 70px 25px;
+		.conference-list li {
+			margin-top: 13px;
+			line-height: 1.9;
+		}
+	}
+
+	.doctors-slider,
+	.personal-license {
+		.pag-arrow{
+			width: 100%;
+			right: -25px;
+			padding-top: 75%;
+			.pagingInfo {
+				padding-left: 0;
+			}
+			.arrow {
+				padding-right: 45px;
+				text-align: end;
+			}
+		}
+		.slide-item .slider-img-wrapp {
+			width: 100%;
+		}
+		.slider-text {
+			position: static;
+			width: 100%;
+			.slider_text-wrapp{
+				padding: 100px 25px 35px 25px;
+			}
+		}
+	}
+
+	.profile .data .photo{
+		padding-top: 150%;
+	}
+
+	.price-list {
+		padding: 45px 25px;
+		.title{
+			margin-bottom: 10px;
+			font-size: 2em;
+			line-height: 1.4;
+		}
+		li{
+			.price {
+				width: 32.28%;
+			}
+			.name-services {
+				line-height: 1.7;
+				width: 66%;
+			}
+			.bg-text {
+				font-size: .875em;
+			}
+			& + li {
+				margin-top: 12px;
+			}
+		}
+	}
+
+	.pagin li {
+		margin: 5px 8px;
+	}
+
+
+	/**** Doctors profile end ****/
+	/***** Doctors page end *****/
+
+
+	/****  News start ****/
+
+	.news-shares {
+		padding: 45px 25px 65px 25px;
+		border-bottom: solid 20px #e9edf4;
+
+		.news-shares-list li {
+			padding-bottom: 65px;
+		}
+		.title{
+			margin-bottom: 25px;
+			font-size: 2em;
+			line-height: 1.34;
+		}
+		.news-shares-list .news-shares-img{
+			width: 100%;
+		}
+		.news-shares-descr {
+			width: 100%;
+			padding: 25px 0 5px 0;
+		}
+	}
+
+	/*** News item ***/
+	.news-item {
+		padding: 25px 25px 50px 25px;
+		.title{
+			margin-bottom: 15px;
+			font-size: 2em;
+			line-height: 1.34;
+		}
+		.date{
+			margin-bottom: 0;
+		}
+		.lecturers-list li{
+			margin: 14px 0;
+		}
+		.news-item .lecturers-list li{}
+	}
+
+	/****  News end ****/
+
+
+	/**** uslugi start ****/
+
+	.uslugi{
+		padding: 45px 0 80px 0;
+		.header-content{
+			margin-bottom: 15px;
+			padding: 0 25px;
+			font-size: 2em;
+			line-height: 1.34;
+		}
+		.board-img{
+			margin-top: 25px;
+		}
+	}
+
+	/*** usluga ***/
+	.usluga{
+		padding: 45px 25px 55px 25px ;
+		> .title{
+			margin-bottom: 30px;
+			font-size: 2em;
+			line-height: 1.34;
+		}
+		.description {
+			.subtitle{
+				line-height: 1.45;
+			}
+			.marker-list li{
+				margin: 14px 0;
+			}
+		}
+	}
+	/*** sub usluga ***/
+	.directions {
+		.directions-info {
+			padding: 45px 25px 55px 25px ;
+			.title {
+				margin-bottom: 15px;
+				font-size: 2em;
+				line-height: 1.34;
+			}
+		}
+
+		.doctors-slider {
+			.pag-arrow {
+				padding-top: 146%;
+			}
+			.doctors-list-item {
+				margin-bottom: 55px;
+				.photo-link .photo {
+					padding-top: 146%;
+					width: 100%;
+				}
+				.description {
+					padding: 0 25px;
+				}
+			}
+		}
+
+		.pop-up .h2 {
+			margin-top: 5px;
+		}
+	}
+	.pop-up form .btn {
+		margin: 30px 3% 70px 3%;}
+
+	/**** uslugi end ****/
+
+	/***** Contacts start *****/
+
+	.contacts{
+		.pop-up .h2 {
+			margin-top: 5px;
+		}
+		.contacts-info {
+			padding: 45px 25px 30px 25px;
+			> .title{
+				margin-bottom: 15px;
+				font-size: 2em;
+				line-height: 1.34;
+			}
+			li{
+				width: 100%;
+				 + li {
+					padding-left: 0;
+				}
+				.mail{
+					margin-bottom: 15px;
+				}
+			}
+		}
+
+	}
+
+	/***** Contacts end *****/
+
+	/***** Otveti na voprosi start *****/
+
+	.answers-questions{
+		.blog{
+			padding: 40px 25px;
+		}
+		.content-header{
+			.title{
+				font-size: 2em;
+			}
+			.link-ask {
+				display: inline-block;
+				margin: 13px 0 40px 0;
+			}
+		}
+		.questions-item .question{
+			width: 100%;
+		}
+		.answers-list{
+			margin-left: 0;
+			padding: 30px 9%;
+			&:before {
+				left: 9%;
+			}
+		}
+		.blog {
+			padding: 40px 25px 5px 25px;
+		}
+		.question-form{
+			margin-top: 74px;
+			padding: 50px 25px 62px 25px;
+			.title {
+				margin-bottom: 20px;
+				font-size: 2em;
+			}
+			.wrapp-input{
+				margin-bottom: 30px;
+				float: none;
+				width: 100%;
+				&:nth-child(even),
+				&:nth-child(odd) {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+
+	/***** Otveti na voprosi end *****/
+
 }
+
 

@@ -1,7 +1,6 @@
 @import "reset";
 @import "variable";
-@import "hover-effect";
-@import "datepicker-custom";
+
 
 //Main style
 
@@ -17,6 +16,7 @@ html, body {
 	font-size: 18px;
 	overflow-x: hidden;
 	background: $second-col;
+	color: #1a1b1b;
 }
 
 .btn{
@@ -32,8 +32,22 @@ html, body {
 	border-radius: 100px;
 	line-height: inherit;
 	transition: all .3s ease;
-
 }
+
+.preloader{
+	background-image: url("../img/loading.gif") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: initial !important;
+}
+
+
+.bold{
+	font-weight: 700;
+	color: #000;
+}
+
+
 
 /***** Sidebar *****/
 
@@ -76,18 +90,58 @@ html, body {
 		margin-bottom: 10px;
 
 		.sidebar-nav{
-			padding: 45px 65px 0 75px;
-
-			a{
-				padding: 16px 0;
-				font-family: inherit;
-				font-weight: 700;
-				font-size: .9em;
-				transition:  .3s  ;
-				color: #000000;
+			padding: 45px 45px 0 55px;
+			.sub-menu{
+				display: none;
 			}
-			a:hover{
-				color: $accent-col;
+
+			.active{
+				padding: 13.5px 0;
+
+				.sub-menu{
+					display: block;
+					font-size: .8em;
+					li{
+						display: block;
+						padding: 25px 0 0 20px;
+						> .link{
+							padding-left: 20px;
+							transition: all .35s;
+							&:hover{
+								color:$accent-col;
+							}
+						}
+
+					}
+				}
+				> .link{
+					display: inline-block;
+
+					padding: 3px 20px 3px 20px;
+					background-color: $accent-col;
+					border-radius: 100px;
+					color: #FFFFFF;
+					&:hover{
+						color: #ffffff;
+					}
+				}
+			}
+
+
+			> li{
+				padding: 16.5px 0;
+
+				> .link{
+					padding: 0 0 0 20px;
+					font-family: inherit;
+					font-weight: 700;
+					font-size: .9em;
+					transition:  .3s  ;
+					color: #1a1b1b;
+					&:hover{
+						color: $accent-col;
+					}
+				}
 			}
 		}
 	}
@@ -216,15 +270,14 @@ header{
 
 	.icon{
 		display: inline-block;
-		width: 50px;
-		height: 50px;
+		width: 55px;
+		height: 55px;
 		margin-right: 10px;
 		border-radius: 50%;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: 50%;
 	}
-
 
 	.map-icon,
 	.phone-icon{
@@ -241,11 +294,12 @@ header{
 
 	.reserv-icon{
 		position: absolute;
-		top: 1px;
+		top: -3px;
 		left: -3px;
 	}
 
 	.wrap{
+		line-height: 1.9;
 		cursor: pointer;
 	}
 
@@ -365,6 +419,7 @@ header{
 		position: relative;
 		background-repeat: no-repeat;
 		background-position: center;
+		background-size: cover;
 		color: #ffffff;
 
 		.gradient,
@@ -484,6 +539,7 @@ header{
 					display: inline-block;
 					width: 12px;
 					height: 10px;
+					margin-right: 5px;
 					background: url("../img/svg/right_b.svg") no-repeat center;
 					background-size: contain;
 				}
@@ -527,7 +583,6 @@ header{
 		padding: 25px 0 25px 5%;
 
 		&:hover h3{
-			transition: color .35s ease;
 			color: $accent-col;
 		}
 		h3{
@@ -535,6 +590,7 @@ header{
 			font-size: 1.45em;
 			font-family: $kievit;
 			line-height: 1.35;
+			transition: color .35s ease;
 
 		}
 
@@ -635,80 +691,79 @@ header{
 }
 
 /***** Slider *****/
+.pag-arrow{
+	height: 100px;
+	z-index: 2;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 58.33333333%;
+
+	.arrow,
+	.pagingInfo{
+		display: inline-block;
+	}
+
+	.pagingInfo{
+		padding-top: 50px;
+		padding-left: 4%;
+		font-size: .8em;
+		color: #8a8f9e;
+	}
+
+	.arrow{
+		margin-top: 40px;
+		text-align: center;
+
+		.wrapp-arr{
+			border: solid 1px #dfe5ee ;
+			border-radius: 50px;
+			width: 45px;
+			height: 45px;
+			display: inline-block;
+
+			span {
+				display: inline-block;
+
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 30%;
+
+				transition: all .3s ease;
+				cursor: pointer;
+
+			}
+
+			.arr-r{
+				background-image: url('../img/svg/scroll_r_b.svg');
+				&:hover{
+					background-image: url('../img/svg/scroll_r_g.svg');
+				}
+
+			}
+			.arr-l{
+				background-image: url('../img/svg/scroll_l_b.svg');
+				&:hover{
+					background-image: url('../img/svg/scroll_l_g.svg');
+				}
+
+			}
+		}
+	}
+
+	.next-arrow{
+		margin-left:9px;
+	}
+}
 
 .slider-wrapp{
 	position: relative;
-	background-color: $second-col;
+	background-color: #e9edf4;
 
 	.img{
 		width: 39.666667%;
-	}
-
-	.pag-arrow{
-		height: 100px;
-		z-index: 2;
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 58.33333333%;
-
-		.arrow,
-		.pagingInfo{
-			display: inline-block;
-		}
-
-		.pagingInfo{
-			padding-top: 50px;
-			padding-left: 4%;
-			font-size: .8em;
-			color: #8a8f9e;
-		}
-
-		.arrow{
-			margin-top: 40px;
-
-			.wrapp-arr{
-				border: solid 1px #dfe5ee ;
-				border-radius: 50px;
-				width: 45px;
-				height: 45px;
-				display: inline-block;
-
-				span {
-					display: inline-block;
-
-					width: 100%;
-					height: 100%;
-					background-repeat: no-repeat;
-					background-position: center;
-					background-size: 30%;
-
-					transition: all .3s ease;
-					cursor: pointer;
-
-				}
-
-				.arr-r{
-					background-image: url('../img/svg/scroll_r_b.svg');
-					&:hover{
-						background-image: url('../img/svg/scroll_r_g.svg');
-					}
-
-				}
-				.arr-l{
-					background-image: url('../img/svg/scroll_l_b.svg');
-					&:hover{
-						background-image: url('../img/svg/scroll_l_g.svg');
-					}
-
-				}
-			}
-		}
-
-		.next-arrow{
-			padding-left: 15px;
-		}
-
 	}
 
 	.slider-img{
@@ -749,12 +804,12 @@ header{
 		border-bottom: solid 1px #e9edf4;
 	}
 	.info-bloc {
-		padding: 75px 0 0 4%;
+		padding: 78px 0 0 4%;
 		ul{
 			padding-bottom: 50px;
 			padding-top: 10px;
 			li{
-				font-size: .76em;
+				font-size: .78em;
 				margin-top: 13px;
 			}
 
@@ -852,7 +907,6 @@ footer{
 		.fresh{
 			color: #8a8f9e;
 		}
-
 	}
 }
 
@@ -865,14 +919,13 @@ footer{
 	right: 0;
 	overflow-y: scroll;
 
-	padding: 45px 4% 0 4%;
+	padding: 45px 5% 0 5%;
 	background: $accent-col;
 	z-index: 101;
 
 	&.open{
 		display: block;
 	}
-
 	&::-webkit-scrollbar { width: 0; }
 	& { -ms-overflow-style: none; }
 	& { overflow: -moz-scrollbars-none; }
@@ -898,7 +951,6 @@ footer{
 			&:hover{
 				cursor: pointer;
 				background-image: url('../img/svg/close_g.svg');
-
 			}
 		}
 	}
@@ -907,7 +959,7 @@ footer{
 		padding: 0 3%;
 		margin: 55px 0 35px 0 ;
 		font-family: $kievit;
-		font-size: 4em;
+		font-size: 2.67em;
 		color: #ffffff;
 	}
 
@@ -929,9 +981,12 @@ footer{
 			border-radius: 0;
 			color: #ffffff;
 			resize: none;
-
 			&:focus{
 				background-color: #42b9b1 ;
+			}
+			&.error{
+				background-color: rgba(250,0,0, .5);
+				color: #ffffff;
 			}
 		}
 
@@ -1063,14 +1118,81 @@ footer{
 
 			transition: all .3s ease;
 
-			&:hover{
+			&:hover,
+			&:focus{
 				color: $accent-col;
+			}
+		}
+	}
+
+	/**** Block for response ****/
+	.response{
+		display: none;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 99;
+
+		//Class for opened
+		&.open{
+			display: block;
+		}
+		.response-text-wrapp{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			.response-text{
+				position: relative;
+				padding: 70px 80px 50px 75px;
+				max-width: 580px;
+				background-color: #FFFFFF;
+			}
+			.response-close{
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				width: 19px;
+				height: 19px;
+
+				background-image: url("../img/svg/close_b.svg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100%;
+
+				cursor: pointer;
+				transition: background-image .35s ease;
+				&:hover{
+					background-image: url("../img/svg/close_g.svg");
+				}
+			}
+			.title{
+				margin: 0 0 20px 0;
+				font-size: 2em;
+				font-family: $kievit;
+			}
+			.thank-text{
+				font-size: .9em;
+				line-height: 1.9;
 			}
 		}
 	}
 }
 
 
+//Import all style
+
+@import "about";
+@import "doctors";
+@import "news-shares";
+@import "uslugi";
+@import "hover-effect";
+@import "datepicker-custom";
+@import "contacts";
+@import "otveti_na_voprosi";
 
 //Media queri
 @import "_mediaqueri";

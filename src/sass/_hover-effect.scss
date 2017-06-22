@@ -1,5 +1,8 @@
 /* the important bits */
 
+
+
+
 .board-img {
 	margin: 0;
 	padding: 0;
@@ -24,9 +27,7 @@
 		}
 
 
-		&:hover .title {
-			color: #000000;
-		}
+
 
 		.normal {
 			position: relative;
@@ -47,7 +48,9 @@
 			border-bottom: transparent;
 
 			z-index: 2;
-
+			&:hover .title {
+				color: #1a1b1b;
+			}
 			.direction-icon,
 			.direction-icon_hov {
 				display: inline-block;
@@ -91,7 +94,7 @@
 		background-position: top left;
 		background-repeat: no-repeat;
 
-		color: #000000;
+		color: #1a1b1b;
 	}
 
 	.in-top .hov {

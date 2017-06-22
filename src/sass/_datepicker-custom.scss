@@ -1,6 +1,12 @@
 /** Datapicer custom style **/
 
+.prev-per td{
+	background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 48%, rgba(242,244,250,1) 50%, rgba(255,255,255,1) 51%, rgba(255,255,255,1) 100%); /* w3c */
+}
+.prev-item{
+	background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 48%, rgba(242,244,250,1) 50%, rgba(255,255,255,1) 51%, rgba(255,255,255,1) 100%); /* w3c */
 
+}
 .datepicker {
 	padding-top: 15px;
 	width: 89.2%;
@@ -13,10 +19,20 @@
 	background-size: 3.5%;
 	background-position: 96%;
 
+
 	table{
 		display: inline-block;
 		font-family: $kievit;
 		font-size: 1.2em;
+
+		.prev-per{
+			.disabled{
+				.wrapp-custom:hover{
+					color: #000;
+				}
+			}
+		}
+
 		.next{
 			padding-right: 10px;
 			text-align: right;
@@ -60,7 +76,6 @@
 			padding: 10px 0;
 		}
 		tr td{
-			vertical-align: bottom;
 			padding: 5px;
 			font-family: $openS;
 			font-weight: 700;
@@ -68,7 +83,8 @@
 			width: 45px;
 			height: 45px;
 
-			&.active .wrapp-custom {
+			&.active .wrapp-custom,
+			&.today .wrapp-custom {
 				background: $accent-col;
 				color: #ffffff;
 				&:hover{
@@ -79,14 +95,19 @@
 				width: 100%;
 				height: 100%;
 				display: inline-block;
-				padding: 6px;
-				vertical-align: sub;
+				vertical-align: middle;
+				padding: 5px;
 				border-radius: 100px;
-				font-size: .8em;
+				font-size: .85em;
 
 				&:hover{
 					color: $accent-col;
 				}
+
+			}
+
+			&.prev-item .wrapp-custom:hover{
+				color: #1a1b1b;
 			}
 
 			&.old{
@@ -132,12 +153,3 @@
 
 
 
-/*******************/
-/***** Media queri *****/
-/*******************/
-@media only screen and  (max-width: 1279px) {
-
-	.datepicker table tr td .wrapp-custom{
-		padding: 2px;
-	}
-}

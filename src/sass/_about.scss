@@ -1,0 +1,207 @@
+//About pages style
+
+/*** Description ***/
+.clinic{
+	padding: 65px 11% 52px 8%;
+
+	.h2{
+		font-size: 2.66em;
+		font-family: $kievit;
+		font-weight: 900;
+		padding: 0;
+		margin: 0 0 40px 0;
+	}
+	.text{
+		margin-top: 15px;
+		line-height: 1.9;
+		font-size: .897em;
+	}
+	.link-obor{
+		display: inline-block;
+		margin-top: 10px;
+		a{
+			font-size: .9em;
+			font-weight: 700;
+			color: $accent-col;
+			&:before{
+				content: '';
+				display: inline-block;
+				width: 15px;
+				height: 10px;
+				margin-left: -4px;
+				background: url(../img/svg/right_g.svg) no-repeat center;
+				background-size: contain;
+			}
+		}
+	}
+}
+
+/*** Mission ***/
+.mission{
+	padding-bottom: 40px;
+	border-top: solid 1px #e9edf4;
+
+
+	figure{
+		padding-right: 1.25%;
+		.photo{
+			width: 100%;
+			margin-top: -1px;
+			padding-top: 150%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		figcaption{
+			padding: 22px 12%;
+			text-align: center;
+			line-height: 2;
+			font-size: .79em;
+			font-family: $openS;
+			color: #8a8f9e;
+			.bold{
+				font-size: 1.12em;
+			}
+		}
+	}
+	.mission-text{
+		padding: 35px 8% 32px 6.5%;
+		.h3{
+			margin-bottom: 24px;
+			font-family: $kievit;
+			font-size: 2em;
+		}
+		p{
+			margin-top: 16px;
+			line-height: 1.85em;
+			font-size: .79em;
+			.link-doctor{
+				color: $accent-col;
+			}
+		}
+	}
+}
+
+
+/*** Clinic slider ***/
+.about{
+	.slider-wrapp .pag-arrow{
+		.arrow{
+			text-align: end;
+			padding-right: 7%
+		}
+		 .pagingInfo{
+			padding-left: 1.5%;
+		}
+	}
+
+
+
+	.clinic-slider{
+		.slide-item{
+			position: relative;
+		}
+
+		.slider-img-wrapp{
+			width: 67.8%;
+		}
+		.slider-img{
+			padding-top: 74.6%;
+			height: 100%;
+		}
+		.slider_about-text{
+			width: 28%;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		.slider_text-wrapp{
+			padding: 100px 20% 40px 0;
+			font-size: .79em;
+			line-height: 1.84;
+		}
+	}
+}
+
+
+/*** Facts ***/
+.facts{
+	padding-top: 55px;
+	.h2{
+		display: inline-block;
+		margin-bottom: 30px;
+		padding-left: 8%;
+		font-family: $kievit;
+		font-size: 2em;
+	}
+
+
+	.facts-list{
+		padding: 0 0 0 8%  ;
+
+		> li{
+			display: inline-block;
+			width: 49.67%;
+			margin-bottom: 30px;
+			vertical-align: top;
+			padding-right: 8%;
+			&:nth-child(even){
+				padding-left: 2.5%;
+			}
+			&:nth-child(odd){
+				padding-right: 10%;
+			}
+		}
+
+		.sub-title{
+			margin-bottom: 17px;
+			font-family: $kievit;
+			font-size: 1.44em;
+		}
+		.description{
+			line-height: 1.9;
+			font-size: .789em;
+		}
+
+	}
+}
+
+
+//License slider
+.license-slider{
+	padding: 147px 0 75px 20px;
+	margin-top: 40px;
+
+	.title{
+		position: absolute;
+		top: 55px;
+		left: 8%;
+		.h3{
+			margin: 0;
+			font-family: $kievit;
+			font-size: 2em;
+		}
+	}
+
+	.pag-arrow .arrow{
+		float: right;
+		margin-top:50px;
+	}
+
+	.slide-item{
+		width: 310px;
+		&:hover .description{
+			color: $accent-col;
+		}
+		img{
+			margin: 0 auto;
+		}
+		.description{
+			margin-top: 12px;
+			line-height: 1.9;
+			text-align: center;
+			font-size: .79em;
+			transition: all .35s;
+		}
+	}
+}

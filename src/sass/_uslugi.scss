@@ -1,0 +1,196 @@
+/***** Uslugi *****/
+
+.uslugi{
+	padding: 65px 8%;
+	border-bottom: solid 20px #e9edf4;
+
+	.header-content{
+		margin: 0;
+		font-family: $kievit;
+		font-size: 2.67em;
+	}
+	.board-img{
+		margin-top: 45px;
+		li {
+			display: table;
+			height: 100px;
+			margin: 0 0  -1px -1px;
+			.normal{
+				display: table-cell;
+				vertical-align: middle;
+				padding: 0 0 0 20px;
+				color: #1a1b1b;
+				border: solid 1px rgba(234, 237, 244, 1);
+				transition: all .35s ease;
+				&:hover{
+					background-color: $accent-col;
+					border-color: $accent-col;
+					.title{
+						color: #ffffff;
+					}
+					.direction-icon{
+						opacity: 1;
+					}
+					.direction-icon_hov{
+						opacity: 0;
+					}
+				}
+				.direction-icon,
+				.direction-icon_hov{
+					top: 21px;
+					left: 20px;
+					display: inline-block;
+					margin: 0 14px;
+					opacity: 1;
+					vertical-align: middle;
+					z-index: 99;
+				}
+				.title{
+					display: inline-block;
+					position: static;
+					width: 60%;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+/***** Usluga *****/
+
+.usluga{
+	padding: 65px 8% 55px 8%;
+	> .title{
+		margin: 0 0 50px 0;
+		font-family: $kievit;
+		font-size: 2.67em;
+	}
+	.directions-tag{
+		margin-bottom: 55px;
+		li{
+			display: inline-block;
+			float: left;
+			margin: -1px -1px 0 0;
+			border: solid 1px #e9edf4;
+			.link{
+				display: inline-block;
+				padding: 5px 16px;
+				line-height: 2;
+				font-size: .8em;
+				color: $accent-col;
+				span{
+					position: relative;
+				}
+				span:after{
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 1px;
+					bottom: 1px;
+					left: 0;
+					background-color: #13a89e;
+					visibility: hidden;
+					transform: scaleX(0);
+					transition: all 0.3s ease-in-out 0s;
+				}
+				&:hover span:after{
+					visibility: visible;
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+	.description{
+		.text{
+			margin: 15px 0;
+			font-size: .9em;
+			line-height: 1.9;
+		}
+		.photo{
+			width: 100%;
+			margin: 10px 0 30px 0;
+		}
+		.subtitle{
+			margin-top: 40px;
+			font-family: $kievit;
+			font-size: 1.45em;
+		}
+		.marker-list{
+			margin-bottom: 20px;
+			font-size: .786em;
+			line-height: 1.8;
+			font-weight: 700;
+		}
+	}
+}
+
+
+/***** directionsa *****/
+
+.directions{
+	.title{
+		font-family: $kievit;
+		font-size: 2.67em;
+	}
+
+	/*** directions info  ***/
+	.directions-info{
+		padding: 65px 8% 55px 8%;
+		.title{
+			margin: 0 0 40px 0;
+		}
+		.text{
+			margin: 15px 0;
+			font-size: .9em;
+			line-height: 1.9;
+		}
+		.photo-wrapp {
+			margin: 30px 0 40px 0;
+			.photo {
+				float: left;
+				width: 32.3%;
+				padding-top: 47%;
+
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				+ .photo {
+					margin-left: 1.5%;
+				}
+			}
+		}
+	}
+
+	/*** Slider doctors slider ***/
+	.doctors-slider{
+		.doctors-list{
+			margin-top: 0;
+		}
+		.doctors-list-item{
+			.description{
+				margin-top: 90px;
+				padding-left: 6.5%;
+				padding-right: 4%;
+				.name{
+					font-size: 2em;
+				}
+			}
+			.photo-link .photo {
+				padding-top: 144%;
+				width: 96%;
+			}
+		}
+	}
+	.pag-arrow {
+		width: 61%;
+	}
+
+	/*** contact form ***/
+	.pop-up{
+		position: static;
+		display: block;
+		.h2{
+			margin-top: 20px;
+		}
+	}
+}

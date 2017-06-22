@@ -1,0 +1,314 @@
+/******************************/
+/***** Doctors page style *****/
+/******************************/
+
+.doctors{
+	padding:42px 8% 0 8%;
+	border-bottom: solid 20px #e9edf4;
+}
+
+
+
+/***** Doctors vse  *****/
+
+
+
+/*** specialty ***/
+
+
+.specialty{
+	.title{
+		font-family: $kievit;
+		font-size: 2.68em;
+	}
+
+	.specialty-tag{
+		.sub-title{
+			font-size: .8em;
+			color: #8a8f9e;
+			margin: 30px 0 12px 0;
+			display: inline-block;
+		}
+
+		li{
+			display: inline-block;
+			&.active{
+				.link{
+					color: $accent-col;
+					font-weight: 700;
+					&:before {
+						border-bottom: dotted 1px transparent;
+					}
+					&:hover:before{
+						border-bottom: dotted 1px transparent;
+					}
+				}
+			}
+			.link{
+				position: relative;
+				margin-right: 7px;
+				font-size: .9em;
+				transition: all .32s;
+				&:before{
+					content: '';
+					position: absolute;
+					bottom: 2px;
+					width: 100%;
+					border-bottom: dotted 1px #1a1b1b;
+				}
+				&:hover{
+					color: $accent-col;
+					&:before{
+						border-color: $accent-col;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*** Doctors list ***/
+.doctors-list{
+	margin-top: 52px;
+}
+.doctors-list-item{
+	margin-bottom: 70px;
+
+	.photo-link{
+		.photo{
+			padding-top: 129.3%;
+			width: 86%;
+			background-image: url("../img/default_bg.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+
+	.description{
+		padding-left: 4.5%;
+
+		.name{
+			margin-top: 6px;
+			font-family: $kievit;
+			font-size: 1.44em;
+			transition: all .35s ease;
+			line-height: 1.25;
+			&:hover{
+				color: $accent-col;
+			}
+		}
+		.specialism{
+			margin: 12px 0;
+			font-size: .785em;
+			color: #8a8f9e;
+		}
+		.education{
+			li{
+				font-size: .79em;
+				margin-top: 16px;
+				line-height: 1.89;
+			}
+		}
+		.read-more{
+			display: inline-block;
+			margin-top: 12px;
+			a{
+				font-size: .8em;
+				color: $accent-col;
+				&:before{
+					content: '';
+					display: inline-block;
+					width: 15px;
+					height: 10px;
+					margin-left: -4px;
+					background: url(../img/svg/right_g.svg) no-repeat center;
+					background-size: contain;
+				}
+			}
+		}
+	}
+}
+
+
+/***** Doctors profile *****/
+.profile{
+
+	.title{
+		font-family: $kievit;
+		font-size: 2em;
+	}
+
+	.title-top{
+		padding: 60px 15% 25px 8%;
+		.name{
+			margin: 0;
+			font-family: $kievit;
+			font-size: 2.66em;
+			line-height: 1.25;
+		}
+		.specialism{
+			margin: 16px 0;
+			font-size: .785em;
+			color: #8a8f9e;
+		}
+	}
+
+	.data{
+		border-top: solid 1px #e9edf4;
+		.photo-wrapp{
+			padding-right: 1.25%;
+		}
+		.photo{
+			margin-top: -1px;
+			padding-top: 150.5%;
+			background-image: url(../img/default_bg.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.education{
+			padding: 35px 7% 0 6.5%;
+			li{
+				font-size: .79em;
+				margin-top: 16px;
+				line-height: 1.89
+			}
+		}
+	}
+}
+
+
+/*** Conference ***/
+.conference{
+	padding: 75px 24% 75px 8%;
+	.title{
+		margin: 0;
+	}
+	.conference-list{
+		li{
+			font-size: 0.9em;
+			margin-top: 20px;
+			line-height: 1.85;
+		}
+	}
+}
+
+
+/*** Slider personality license ***/
+.personal-license,
+.doctors-slider{
+	position: relative;
+	border-top: solid 1px #e9edf4;
+
+
+	.pag-arrow{
+		.pagingInfo{
+			padding-left: 2%;
+		}
+	}
+	.pag-arrow .arrow .wrapp-arr {
+		background: #e9edf4;
+		.arr-l,
+		.arr-r{
+			opacity: .1;
+		}
+		.arr-r{
+			&:hover{
+				opacity: 1;
+				background-image: url(../img/svg/scroll_r_b.svg);
+			}
+		}
+		.arr-l{
+			&:hover{
+				opacity: 1;
+				background-image: url(../img/svg/scroll_l_b.svg);
+			}
+		}
+	}
+
+	.slide-item{
+		position: relative;
+		.slider-img-wrapp{
+			width: 68%;
+			margin-top: -2px;
+		}
+		.slider-img{
+			width: 100%;
+			padding-top: 74.6%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+
+	.slider-text{
+		width: 28%;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		.slider_text-wrapp{
+			padding: 100px 20% 40px 0;
+			font-size: .79em;
+			line-height: 1.84;
+		}
+	}
+}
+
+
+/*** price-list ***/
+.price-list{
+	padding: 65px 8%;
+	background-color: #e9edf4;
+	.title{
+		margin: 0 0 25px 0;
+		font-size: 2.66em;
+	}
+	li{
+		position: relative;
+		& + li{
+			margin-top: 15px;
+		}
+
+		&:before{
+			content: '';
+			position: absolute;
+			bottom: 9px;
+			width: 99%;
+			border-bottom: dotted 1px #1a1b1b;
+
+		}
+
+		.bg-text{
+			position: relative;
+			background-color: #e9edf4;
+		}
+		.name-services{
+			width: 82.9%;
+			display: inline-block;
+			font-size: .892em;
+			line-height: 1.9;
+			transition: color .35s;
+			&:hover{
+				color: $accent-col;
+			}
+			.bg-text{
+				padding-right: 5px;
+				transition: color .35s;
+			}
+		}
+		.price{
+			width: 16.3%;
+			display: inline-block;
+			text-align: end;
+			font-weight: 700;
+			font-size: .9em;
+			background-color: #e9edf4;
+			.bg-text{
+				padding-left: 5px;
+			}
+		}
+	}
+}
+

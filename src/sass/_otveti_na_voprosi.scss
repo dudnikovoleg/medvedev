@@ -1,0 +1,264 @@
+.title{
+	font-family: $kievit;
+}
+
+
+/***** Ask a Question *****/
+.answers-questions {
+
+	.blog {
+		padding: 65px 24% 10px 8%;
+	}
+	.content-header {
+		.title {
+			margin: 0;
+			font-size: 2.66em;
+		}
+
+		.directions-select{
+			position: relative;
+			width: 350px;
+		}
+		.selected{
+			padding: 10px 20px;
+			border: solid 1px #8a8f9e;
+			transition: all .35s;
+			&:hover{
+				border-color: $accent-col;
+				color: $accent-col;
+				cursor: pointer;
+			}
+		}
+		.directions-select-list{
+			position: absolute;
+			width: 350px;
+			max-height: 300px;
+			overflow-y: scroll;
+			border: solid 1px #dadde2;
+			border-top: none;
+			box-shadow: 0 15px 60px -23px rgba(0, 0, 0, 0.75);
+			z-index: 9;
+			background: #FFFFFF;
+			li{
+				padding: 5px 20px;
+			}
+		}
+
+		.link-ask {
+			display: inline-block;
+			margin: 40px 0 40px 0;
+			a {
+				font-size: .9em;
+				font-weight: 700;
+				color: $accent-col;
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 15px;
+					height: 10px;
+					margin-left: -4px;
+					background: url(../img/svg/right_g.svg) no-repeat center;
+					background-size: contain;
+				}
+			}
+		}
+	}
+
+	/**** blog ****/
+	.question,
+	.answer {
+		line-height: 1.85;
+	}
+
+	//questions
+	.questions-item {
+		margin-bottom: 70px;
+		.question {
+			width: 80%;
+			font-size: .787em;
+		}
+	}
+
+	//answers
+	.answers-list {
+		position: relative;
+		margin: 32px 0 0 6%;
+		padding: 30px 6%;
+		background-color: #e9edf4;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 6%;
+			top: -20px;
+			border: 23px solid transparent;
+			border-bottom: 0 solid transparent;
+			border-right: 0 solid transparent;
+			border-left: 35px solid #e9edf4;
+		}
+		.answer {
+			font-size: .787em;
+		}
+	}
+
+	.content-header {
+		span {
+			display: block;
+		}
+		.doc-name,
+		.client-name {
+			font-family: $kievit;
+			font-size: 1.45em;
+		}
+		.specialism,
+		.date-ask {
+			margin-bottom: 15px;
+			font-size: .785em;
+			color: #8a8f9e;
+		}
+	}
+}
+
+
+//Pagination
+.pagin{
+	text-align: center;
+	ul{
+		display: inline-block;
+	}
+	li{
+		display: inline-block;
+		margin: 0 8px;
+		font-weight: 700;
+		.prev,
+		.next{
+			display: inline-block;
+			min-height: 35px;
+			padding: 3px 17px;
+			border: solid 2px #dfe5ed;
+			border-radius: 50px;
+			font-size: .78em;
+			transition: all .35s;
+			&:hover{
+				color: $accent-col;
+			}
+			&.disabled{
+				color: #dfe5ed ;
+			}
+		}
+		.count-pag{
+			display: inline-block;
+			min-width: 34px;
+			min-height: 34px;
+			padding: 5px 10px;
+			background-color: #dfe5ed;
+			border-radius: 50px;
+			font-size: .8em;
+			transition: all .35s;
+			&:hover{
+				background-color: $accent-col;
+				color: #ffffff;
+			}
+			&.active{
+				background-color: $accent-col;
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+
+.answers-questions{
+
+	/*** Question form ***/
+	.question-form{
+		margin-top: 80px;
+		padding: 65px 24% 80px 8%;
+		background-color: #e9edf4;
+		.wrapp-input{
+			padding-bottom: 30px;
+			float: left;
+			width: 50%;
+			&:nth-child(odd){
+				padding-right: 10px;
+			}
+			&:nth-child(even){
+				padding-left: 11px;
+			}
+		}
+		.title{
+			margin: 0 0 50px 0;
+			font-size: 2.66em;
+		}
+
+		.wrapp-input,
+		.wrapp-text{
+			position: relative;
+		}
+
+		form{
+			/*** Placeholder ***/
+			::-webkit-input-placeholder {
+				font-weight: 300;
+				color:#8a8f9e;
+				font-size: 14px;
+			}
+			::-moz-placeholder{
+				color:#8a8f9e;
+				font-size: 14px;
+				font-weight: 300;
+			}/* Firefox 19+ */
+			:-moz-placeholder {
+				color:#8a8f9e;
+				font-size: 14px;
+				font-weight: 300;
+			}/* Firefox 18- */
+			:-ms-input-placeholder {
+				color:#8a8f9e;
+				font-size: 14px;
+				font-weight: 300;
+			}
+		}
+
+		label{
+			position: absolute;
+			top: -25px;
+			margin: 0;
+			font-size: .67em;
+			font-weight: normal;
+			opacity: 0;
+			color: #8a8f9e;
+			transition: all .3s ease;
+		}
+		input,
+		textarea{
+			position: relative;
+			width: 100%;
+			font-weight: 700;
+			outline: 0;
+			margin: 0;
+			padding: 14px;
+			border: none;
+			font-size: .88em;
+			resize: none;
+
+			&.error{
+				background-color: rgba(250,0,0, .5);
+				color: #ffffff;
+			}
+			&:focus + label,
+			&:focus + label {
+				opacity:1;
+			}
+
+		}
+		.btn.ask-question{
+			margin-top: 40px;
+			padding: 15px 35px 15px 35px;
+			font-size: 1em;
+			background-color: #3b4047;
+			&:hover{
+				color: $accent-col;
+			}
+		}
+	}
+}

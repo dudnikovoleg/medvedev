@@ -1,9 +1,17 @@
+
 (function ($) {
+
+/*** Preloader ***/
+    $(window).on('load', function () {
+        var sliderPreloaderItem = $('.slider-img, .photo, .header-main, container-fluid')
+        sliderPreloaderItem.removeClass('preloader')
+    });
+
     $(document).ready(function () {
 
+        $('.directions-select-list').perfectScrollbar();
 
 
-        var addressCont = $(".wrap");
 
         init();
 
@@ -11,8 +19,13 @@
         function init() {
 
             slider();// Slider olugin init
-            stickSidebar ();
-            mobMenu();
+            stickSidebar ();//Slider init
+            mobMenu();//Mobile menu init
+            fbForm()//Fit back form init
+            profileScroll()//Profile smooth scroll
+            subUslugaScroll()//sub usluga scroll
+            responsePopup()//Response thank text pop-up
+
         }
 
 
@@ -21,15 +34,13 @@
             var minWith  = 1279;
 
             if ($(window).width() >= minWith){
-                addressPopup();//Slider lib initial
+                addressPopup();//Show address pop up
                 searchForm();//Search form initial
             }
-
         }
 
         $(window).ready(minWindowSize);
         $(window).resize(minWindowSize);
-
 
 
 
@@ -46,7 +57,6 @@
             }else {
 
                 $("#sidebar").stick_in_parent({});
-
             }
         }
         $(window).ready(stickSidebar);
@@ -56,46 +66,102 @@
 /**************************/
 /** Slider lib initial **/
 /**************************/
-    function slider () {
-        var $status = $('.pagingInfo');
-        var $slickElement = $('.slider');
 
-        $slickElement.on('init reInit afterChange', function (event, slick, currentSlide) {
+    function slider () {
+
+
+
+
+        /**************************/
+        /** Main slider lib initial **/
+        /**************************/
+
+
+
+
+        var aboutStatus = $('.pagingInfo'),
+            mainSlider = $('#mainSlider'),
+
+            clinicSlider    = $('#clinicSlider'),
+            profileSlider   = $('#profileSlider'),
+            licenseSlider   = $('#licenseSlider'),
+            doctorsSlider   = $('#doctorsSlider');
+
+
+
+
+        /*pagination fo each slider*/
+
+        mainSlider.on('init reInit afterChange', function (event, slick, currentSlide) {
             var i = (currentSlide ? currentSlide : 0) + 1;
-            $status.text(i + ' / ' + slick.slideCount);
+            aboutStatus.text(i + ' / ' + slick.slideCount);
+        });
+        clinicSlider.on('init reInit afterChange', function (event, slick, currentSlide) {
+            var i = (currentSlide ? currentSlide : 0) + 1;
+            aboutStatus.text(i + ' / ' + slick.slideCount);
+        });
+        profileSlider.on('init reInit afterChange', function (event, slick, currentSlide) {
+            var i = (currentSlide ? currentSlide : 0) + 1;
+            aboutStatus.text(i + ' / ' + slick.slideCount);
+        });
+        doctorsSlider.on('init reInit afterChange', function (event, slick, currentSlide) {
+            var i = (currentSlide ? currentSlide : 0) + 1;
+            aboutStatus.text(i + ' / ' + slick.slideCount);
         });
 
-        $('.slider').slick({
+
+
+        /*Initial all the same slider*/
+
+        $('#mainSlider, #clinicSlider, #profileSlider, #doctorsSlider').slick({
             prevArrow: $('.prev-arrow'),
             nextArrow: $('.next-arrow'),
             autoplay: true,
             infinite: true,
             autoplaySpeed: 5000,
-            responsive: [
-                {
-                    breakpoint: 767,
-                    settings: {
-                        touchMove: true
-                    }
-                }]
+            adaptiveHeight: true
         });
-
 
         $('.pag-arrow').on('click', function () {
-            $('.pag-arrow').css('z-index', '0')
-        })
-
-
-        $slickElement.on('afterChange', function(event, slick, currentSlide, nextSlide){
+            $('.pag-arrow').css('z-index', '0');
+            setTimeout(
+                function(){$('.pag-arrow').css('z-index', '2')},
+                500);
+        }).on('afterChange', function(event, slick, currentSlide, nextSlide){
             $('.pag-arrow').css('z-index', '2')
-
         });
+
+
+
+
+
+        /**************************/
+        /***** License slider *****/
+        /**************************/
+
+
+
+        licenseSlider.slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            variableWidth: true,
+            prevArrow: $('.license-slider .prev-arrow'),
+            nextArrow: $('.license-slider .next-arrow')
+        })
     }
 
 
 
 
+        /**************************/
+        /** Addresss pop-up **/
+        /**************************/
+
+
+
+
         function addressPopup() {
+            var addressCont = $(".wrap");
 
             $('header .wrap').on('click', function () {
                 addressCont.addClass('open');
@@ -116,18 +182,24 @@
 
 
 
+        /**************************/
+        /** Search form resize **/
+        /**************************/
 
-function searchForm() {
-    $('.search-icon').hover(
-        function(){
-            $('.form-control').addClass('open')
-        },
-        function(){
-            $('.search-icon').removeClass('open')
-            $('.form-control').removeClass('open')
-        });
 
-}
+
+
+    function searchForm() {
+        $('.search-icon').hover(
+            function(){
+                $('.form-control').addClass('open')
+            },
+            function(){
+                $('.search-icon').removeClass('open')
+                $('.form-control').removeClass('open')
+            });
+
+    }
 
 
 
@@ -139,73 +211,110 @@ function searchForm() {
 /**************************/
 
 
-$('.btn-feedback .btn').on('click', function () {
-    $('.pop-up').addClass('open')
-});
-
-$('.pop-up .closed-ic').on('click', function () {
-    $('.pop-up').removeClass('open')
-});
+        function fbForm() {
 
 
+            $('.btn-feedback .btn').on('click', function () {
+                $('.pop-up').addClass('open')
+            });
+
+            $('.pop-up .closed-ic').on('click', function () {
+                $('.pop-up').removeClass('open')
+            });
 
 
-    $(".time-list li").on('click', function () {
+            $(".time-list li").on('click', function () {
 
-            time = $(this).text();
+                time = $(this).text();
 
-            $('#time').val(time);
+                $('#time').val(time);
 
-        });
+            });
 
-        $('#time ').on('click', function () {
-            $(".time-list").addClass('open')
+            $('#time ').on('click', function () {
+                $(".time-list").addClass('open')
 
-            $(".timepicker").addClass('arr-up')
-        });
+                $(".timepicker").addClass('arr-up')
+            });
 
-        $(' .time-icon ').on('click', function () {
-            $(".time-list").toggleClass('open')
-            $(".timepicker").toggleClass('arr-up')
-        });
-
-
-        $(".time-list li ").click(function(e) {
-            e.preventDefault();
-
-            $(".time-list li").removeClass('active');
-
-            $(this).addClass('active');
-        });
-
-        $('.time').keydown(function(e){
-            e.preventDefault()
-        });
-
-        $(document).on('click', function(event) {
-            if ($(event.target).closest(".time-list").length === 0 && $(event.target).closest(".time").length === 0  && $(event.target).closest(".time-icon").length === 0) {
-                $(".time-list").removeClass('open')
-                $(".timepicker").removeClass('arr-up')
-            }
-        });
+            $(' .time-icon ').on('click', function () {
+                $(".time-list").toggleClass('open')
+                $(".timepicker").toggleClass('arr-up')
+            });
 
 
+            $(".time-list li ").click(function (e) {
+                e.preventDefault();
 
-        $("#datepicker").datepicker({
+                $(".time-list li").removeClass('active');
+
+                $(this).addClass('active');
+            });
+
+            $('.time').keydown(function (e) {
+                e.preventDefault()
+            });
+
+            $(document).on('click', function (event) {
+                if ($(event.target).closest(".time").length === 0 && $(event.target).closest(".time-icon").length === 0) {
+                    $(".time-list").removeClass('open')
+                    $(".timepicker").removeClass('arr-up')
+                }
+            });
+
+            $(document).on('keyup, input', "#time, #datepicker", function (event) {
+
+                $(this).prop('value', $(this).val().replace(/[^0-9.\d]/gim, ''))
+            })
+
+
+            $("#datepicker").datepicker({
+                todayHighlight: true,
 
                 format: 'mm.dd.yyyy',
                 language: 'ru',
                 container: '.wrapp-date',
                 oldDates: true,
                 newDates: false,
+                disableTouchKeyboard: true,
+                autoclose: true,
                 templates: {
                     leftArrow: '<span class="left"> </span>',
                     rightArrow: '<span class="right"> </span>',
                 }
-            }).on('show', function(e) {
+            }).on('show', function () {
                 $(".old ").text('')
+                $(".old ").addClass('disabled')
+
+
+                $(".today").prevAll().addClass('prev-item disabled')
+
+                $(".today").parent().prevAll('tr').addClass('prev-per')
+                $(".today").parent().prevAll('tr').children().addClass(' disabled')
 
             });
+
+        }
+
+/***** Thank text pop-up  *****/
+        function responsePopup() {
+
+
+            $('#sendBotton').on('click', function () {
+                $('.response').addClass('open');
+            });
+
+            $('.response-close').on('click', function () {
+                $('.response').removeClass('open');
+            });
+
+            $(document).on('click', function(event) {
+                if ($(event.target).closest(".response-text").length === 0 && $(event.target).closest("#sendBotton").length === 0  ) {
+                    $('.response').removeClass('open');
+                }
+            })
+        }
+
 
 
         function windowSize(){
@@ -227,7 +336,6 @@ $('.pop-up .closed-ic').on('click', function () {
 
 
 
-
         /**************************/
         /** Mobile menu **/
         /**************************/
@@ -236,7 +344,6 @@ $('.pop-up .closed-ic').on('click', function () {
 
 
             $(".navTrigger").on('click', function () {
-
 
                 $(this).toggleClass('active');
 
@@ -266,7 +373,6 @@ $('.pop-up .closed-ic').on('click', function () {
 
         $(" .title").on('click',function(){
 
-
             if ($(this).hasClass("show")){
 
                 $(this).removeClass('show')
@@ -277,7 +383,7 @@ $('.pop-up .closed-ic').on('click', function () {
                 $(this).addClass('show')
 
             }
-        })
+        });
 
 
         function positionSoc () {
@@ -297,6 +403,48 @@ $('.pop-up .closed-ic').on('click', function () {
             }
             $(window).ready(positionSoc);
             $(window).resize(positionSoc);
+
+
+
+
+
+
+        /**************************/
+        /** Doctor profile smooth scroll **/
+        /**************************/
+
+
+
+
+
+        function profileScroll() {
+            $('.link-ask').click(function() {
+
+                $('html, body').animate({scrollTop: $("#questionForm").offset().top}, 800);
+
+            });
+        }
+
+
+
+
+
+
+        /**************************/
+        /** Sub usluga smooth scroll **/
+        /**************************/
+
+
+
+
+
+        function subUslugaScroll() {
+            $('.btn-feedback').click(function() {
+
+                $('html, body').animate({scrollTop: $("#contact-form-anchor").offset().top}, 500);
+
+            });
+        }
 
     })
 })(jQuery);
